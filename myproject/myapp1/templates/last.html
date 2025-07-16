@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <p>name of Author: {{author}}</p>
+   <p>birthplace of Author: {{birthplace}}</p>
+
+   {% if age >= 18 and age <= 120 %}
+   <p>You'are elligible to vote</p>
+   {% elif age > 120 %}
+   <p>You can retire now as voter</p>
+   {% elif age < 0 and age == 0 %}
+   <p>Please, enter a valid age</p>
+   {% else %}
+   <p>You aren't elligible as voter</p>
+   {% endif %}
+</body>
+</html>
