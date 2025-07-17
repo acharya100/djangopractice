@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,5 +10,13 @@
     <a href = {% url 'start' %}>Go to start.html</a>
     <br>
     <a href = {% url 'last' %}>Go to last.html</a>
+    <br>
+    {% for i in Individual %}
+    <p>{{i.name}}</p>
+    {% if i.image %}
+    <img src="{{i.image.url}}" alt = "">
+    {% endif %}
+    {% endfor %}
+    
 </body>
 </html>

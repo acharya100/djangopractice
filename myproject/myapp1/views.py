@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Individual
 
 # Create your views here.
 def hello_func(request):
@@ -20,7 +21,8 @@ def last(request):
     return render(request, "last.html",dic_2)
 
 def link(request):
-    return render(request, 'link.html')
+    i=Individual.objects.all()[:3]
+    return render(request,'link.html',{'Individual':i})
 
 def navbar(request):
     return render(request, 'navbar.html')
