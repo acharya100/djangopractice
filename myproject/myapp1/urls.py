@@ -12,5 +12,7 @@ urlpatterns = [
     path('marketplace/', marketplace, name='marketplace'),
     path('contact/', contact, name='contact'),
     path('features/', features, name='features'),
-    path('team/', team, name='team')
+    path('team/', team, name='team'),
+    path('dep/',department,name="department"),
+    path('Individual/',Individual_view,name="Individual")
 ]

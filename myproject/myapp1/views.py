@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Individual
+from .models import Individual, Department
+from .forms import IndividualForm
 
 # Create your views here.
 def hello_func(request):
@@ -44,3 +45,20 @@ def features(request):
 
 def team(request):
     return render(request, 'team.html')
+
+def department(request):
+    if request.method =="POST":
+        name=request.POST.get("name")
+        dep=Department.objects.create(name=name)
+        dep.save()
+    return render(request, 'department.html')
+
+
+def Individual_view(request):
+    if request.method=="POST":
+        form=IndividualForm(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+    form=IndividualForm()
+
+    return render(request,"Individual.html",{'form':form})
