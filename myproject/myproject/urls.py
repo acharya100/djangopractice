@@ -18,8 +18,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from myapp1.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('myapp1.urls')),
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+handler404 = error404
+handler500 = error500
+
+handler404 = 'myapp1.views.error404'
+handler500 = 'myapp1.views.error500'
