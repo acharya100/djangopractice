@@ -16,7 +16,7 @@ def hello_func(request):
 @admin_only
 def start(request):
     dic_1 = {
-        'list' : ['randy', 'edge', 'rock', 'kurt angle']
+        'list' : ['randy', 'edge', 'rock', 'kurt angle', 'big show']
     }
     return render(request, "start.html", dic_1)
 
