@@ -12,6 +12,7 @@ class Department(models.Model):
 class Individual(models.Model):
     name = models.CharField(max_length=100)
     age = models.IntegerField()
+    height=models.DecimalField(decimal_places=2,max_digits=20,null=True,blank=True)
     description = models.TextField()
     image = models.ImageField(upload_to="images",null=True)
     department=models.ForeignKey(Department,on_delete=models.CASCADE,null=True)

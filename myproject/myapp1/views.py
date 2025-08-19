@@ -9,7 +9,6 @@ from .decorators import admin_only
 from rest_framework.views import APIView 
 # Create your views here.
 
-
 def hello_func(request):
     return HttpResponse("hello, steve.!")
 
