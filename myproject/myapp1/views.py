@@ -23,7 +23,8 @@ def last(request):
     dic_2 = {
         'author' : 'johnny',
         'birthplace' : 'sydney',
-        'age' : 34
+        'age' : 34,
+        'info':["john","cena",48]
     }
     return render(request, "last.html",dic_2)
 

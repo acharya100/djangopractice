@@ -18,5 +18,12 @@
    {% else %}
    <p>You aren't elligible as voter</p>
    {% endif %}
+   <ul>
+   {% for info in list %}
+   <li>
+    <p>{{info}}</p>
+   </li>
+   {% endif %}
+   </ul>
 </body>
 </html>
